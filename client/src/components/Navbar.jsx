@@ -108,32 +108,27 @@ function Navbar({ open, setOpen, search, setSearch }) {
       </div>
 
       {/* CENTER */}
-<div className="nav-center">
-  <div className="search-box">
-    <input
-      type="text"
-      placeholder="Search"
-      value={search}
-      onChange={(e) => setSearch(e.target.value)}
-      aria-label="Search videos"
-    />
+      <div className="nav-center">
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
 
-    {search && (
-      <button
-        type="button"
-        className="clear-search"
-        onClick={() => setSearch("")}
-        aria-label="Clear search"
-      >
-        ×
-      </button>
-    )}
-
-    <button type="button" aria-label="Search">
-      <FaSearch />
-    </button>
-  </div>
-</div>
+          <button
+            type="button"
+            aria-label="Search"
+            onClick={() => {
+              if (search.trim()) {
+                setSearch(search.trim());
+              }
+            }}
+          >
+            <FaSearch />
+          </button>
+        </div>
 
         <button className="mic-btn">
           <FaMicrophone />
