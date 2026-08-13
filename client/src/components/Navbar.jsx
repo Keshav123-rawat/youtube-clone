@@ -154,7 +154,13 @@ function Navbar({ open, setOpen, search, setSearch }) {
           <span>Create</span>
         </button>
 
-        <FaBell className="icon" />
+        <button
+          type="button"
+          className="notification-btn"
+          aria-label="Notifications"
+        >
+          <FaBell className="icon" />
+        </button>
 
         {/* ACCOUNT */}
         {user ? (

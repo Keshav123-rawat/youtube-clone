@@ -59,6 +59,15 @@
   font-size: 20px;
   padding: 0 8px;
 }
+.notification-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .search-suggestions {
   position: absolute;
 
