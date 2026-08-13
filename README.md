@@ -38,7 +38,3 @@ npm run dev
 ```
 
 See `client/README.md` for setup details.
-
-## Git
-
-Git history/commit count is intentionally left to the student repository and was not generated or modified as part of this project update.
