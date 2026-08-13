@@ -216,7 +216,7 @@ function Navbar({ open, setOpen, search, setSearch }) {
                 </button>
 
                 {/* SWITCH ACCOUNT */}
-                <button className="account-item">
+                <button className="account-item" aria-label="Switch account">
                   <MdOutlineAccountCircle />
 
                   <span>Switch account</span>
