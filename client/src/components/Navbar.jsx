@@ -115,6 +115,12 @@ function Navbar({ open, setOpen, search, setSearch }) {
             placeholder="Search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                setSearch(search.trim());
+              }
+            }}
+            aria-label="Search videos"
           />
 
           <button
