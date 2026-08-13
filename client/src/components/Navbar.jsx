@@ -169,6 +169,7 @@ function Navbar({ open, setOpen, search, setSearch }) {
               className="profile"
               title={user.name}
               aria-label={`Open account menu for ${user.name || "User"}`}
+              aria-expanded={showAccountMenu}
               onClick={() => setShowAccountMenu(!showAccountMenu)}
             >
               {user.name ? user.name.charAt(0).toUpperCase() : "U"}
