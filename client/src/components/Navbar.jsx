@@ -234,6 +234,7 @@ function Navbar({ open, setOpen, search, setSearch }) {
                 {/* Delete button */}
                 <button
                   className="account-item delete-account-item"
+                  aria-label="Delete account permanently"
                   onClick={() => {
                     setShowAccountMenu(false);
                     setShowDeleteAccountPopup(true);
