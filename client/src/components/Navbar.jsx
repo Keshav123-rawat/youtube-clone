@@ -271,7 +271,10 @@ function Navbar({ open, setOpen, search, setSearch }) {
                 <div className="account-divider" />
 
                 {/* DATA */}
-                <button className="account-item">
+                <button
+                  className="account-item"
+                  aria-label="Your data in YouTube"
+                >
                   <MdOutlineAccountCircle />
 
                   <span>Your data in YouTube</span>
