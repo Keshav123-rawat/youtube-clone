@@ -259,7 +259,10 @@ function Navbar({ open, setOpen, search, setSearch }) {
                 </button>
 
                 {/* PURCHASES */}
-                <button className="account-item">
+                <button
+                  className="account-item"
+                  aria-label="Purchases and memberships"
+                >
                   <span className="money-icon">$</span>
 
                   <span>Purchases and memberships</span>
