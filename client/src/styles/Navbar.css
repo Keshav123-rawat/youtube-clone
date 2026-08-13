@@ -1,0 +1,630 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  background: #0f0f0f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.menu {
+  font-size: 22px;
+  cursor: pointer;
+}
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo {
+  height: 22px;
+  cursor: pointer;
+}
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 45%;
+}
+
+.search-box {
+  display: flex;
+  flex: 1;
+  height: 42px;
+  position: relative;
+}
+.search-suggestions {
+  position: absolute;
+
+  top: 55px;
+
+  left: 0;
+
+  width: 100%;
+
+  background: #212121;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+
+  z-index: 1000;
+}
+.suggestion-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 16px;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.suggestion-item:hover {
+  background: #303030;
+}
+.search-box input {
+  flex: 1;
+  background: #121212;
+  border: 1px solid #333;
+  color: white;
+  padding: 0 18px;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  font-size: 16px;
+}
+.search-box button {
+  width: 70px;
+  border: none;
+  background: #222;
+  color: white;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.mic-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.create-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #272727;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.icon {
+  font-size: 21px;
+  cursor: pointer;
+}
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #607d8b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+}
+.signin-btn {
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid #3ea6ff;
+  border-radius: 20px;
+  background: transparent;
+  color: #3ea6ff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.signin-btn:hover {
+  background: rgba(62, 166, 255, 0.12);
+}
+
+.signin-btn:active {
+  transform: scale(0.97);
+}
+
+/* NEW */
+.profile-wrapper {
+  position: relative;
+}
+
+.profile {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: #065fd4;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.account-menu {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 360px;
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+  background: #282828;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+  padding: 8px 0;
+}
+
+.account-header {
+  display: flex;
+  gap: 16px;
+  padding: 14px 18px 18px;
+  align-items: center;
+}
+
+.account-avatar {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 50%;
+  background: #607d8b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.account-user-info h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.account-user-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #aaa;
+  word-break: break-word;
+}
+
+.account-divider {
+  height: 1px;
+  background: #444;
+  margin: 7px 0;
+}
+
+.account-item {
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 18px;
+  border: none;
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.account-item svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #ddd;
+}
+
+.account-item:hover {
+  background: #3f3f3f;
+}
+
+.channel-create {
+  color: #3ea6ff;
+}
+
+.channel-create svg {
+  color: #3ea6ff;
+}
+
+.item-arrow {
+  margin-left: auto;
+  font-size: 25px;
+  color: #aaa;
+}
+
+.google-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.money-icon {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.moon-icon {
+  width: 22px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .account-menu {
+    position: fixed;
+    top: 60px;
+    right: 8px;
+    width: min(360px, calc(100vw - 16px));
+  }
+}
+
+/* DELETE */
+.delete-account-item {
+  color: #ff4d4d !important;
+}
+
+.delete-account-item svg {
+  color: #ff4d4d !important;
+}
+
+.delete-account-item:hover {
+  background: rgba(255, 0, 0, 0.12);
+}
+
+.delete-account-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.delete-account-popup {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 30px;
+
+  border-radius: 16px;
+
+  background: #fff;
+
+  text-align: center;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.delete-account-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 16px;
+
+  border-radius: 50%;
+
+  background: #fee2e2;
+  color: #dc2626;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+}
+
+.delete-account-popup h2 {
+  margin: 0 0 10px;
+
+  color: #111;
+}
+
+.delete-account-popup p {
+  margin: 0 auto 24px;
+
+  color: #666;
+
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.delete-account-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.delete-cancel-btn,
+.delete-confirm-btn {
+  border: none;
+  border-radius: 22px;
+
+  padding: 11px 18px;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-cancel-btn {
+  background: #eee;
+  color: #222;
+}
+
+.delete-confirm-btn {
+  background: #ff0000;
+  color: #fff;
+}
+
+.delete-confirm-btn:hover {
+  background: #cc0000;
+}
+
+@media (max-width: 500px) {
+  .delete-account-actions {
+    flex-direction: column-reverse;
+  }
+
+  .delete-cancel-btn,
+  .delete-confirm-btn {
+    width: 100%;
+  }
+}
+
+/* ============================= */
+/* RESPONSIVE NAVBAR */
+/* ============================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 12px;
+  }
+
+  .nav-left {
+    gap: 14px;
+  }
+
+  .nav-center {
+    width: 42%;
+    gap: 8px;
+  }
+
+  .nav-right {
+    gap: 12px;
+  }
+
+  .create-btn {
+    padding: 9px 13px;
+  }
+
+  .create-btn span {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    height: 56px;
+    padding: 0 10px;
+  }
+
+  .nav-left {
+    gap: 12px;
+  }
+
+  .logo {
+    height: 20px;
+  }
+
+  .nav-center {
+    width: auto;
+    flex: 1;
+    margin: 0 8px;
+  }
+
+  .search-box {
+    height: 38px;
+  }
+
+  .search-box input {
+    min-width: 0;
+    font-size: 14px;
+    padding: 0 12px;
+  }
+
+  .search-box button {
+    width: 48px;
+    font-size: 16px;
+  }
+
+  .mic-btn {
+    display: none;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  .create-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+  }
+
+  .icon {
+    font-size: 19px;
+  }
+
+  .profile,
+  .signin-btn {
+    flex-shrink: 0;
+  }
+
+  .signin-btn {
+    height: 36px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 0 8px;
+  }
+
+  .nav-left {
+    gap: 9px;
+  }
+
+  .menu {
+    font-size: 19px;
+  }
+
+  .logo {
+    height: 18px;
+  }
+
+  .nav-center {
+    margin: 0 5px;
+  }
+
+  .search-box input {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+
+  .search-box button {
+    width: 42px;
+  }
+
+  .nav-right {
+    gap: 7px;
+  }
+
+  .create-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-right > .icon {
+    font-size: 17px;
+  }
+
+  .profile {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .signin-btn {
+    height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo {
+    display: none;
+  }
+
+  .nav-center {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .search-box input {
+    font-size: 12px;
+  }
+
+  .nav-right {
+    gap: 5px;
+  }
+
+  .create-btn {
+    display: none;
+  }
+
+  .nav-right > .icon {
+    display: none;
+  }
+}

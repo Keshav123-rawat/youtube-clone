@@ -1,0 +1,772 @@
+.watch-page {
+  display: flex;
+  gap: 25px;
+  padding: 30px 25px 25px;
+  background: #0f0f0f;
+  min-height: 100vh;
+  position: relative;
+}
+.video-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #000;
+  color: #fff;
+  font-size: 15px;
+}
+.loading-spinner {
+  width: 38px;
+  height: 38px;
+  border: 4px solid #333;
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  animation: videoLoadingSpin 0.8s linear infinite;
+}
+@keyframes videoLoadingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+h2 {
+  margin-top: 10px;
+}
+.watch-left {
+  flex: 2;
+}
+
+.watch-right {
+  flex: 1;
+}
+
+.video-player {
+  position: relative;
+  width: 100%;
+
+  aspect-ratio: 16/9;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+.video-player iframe {
+  border: none;
+}
+.watch-actions {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 20px;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.channel-section {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.watch-channel {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.channel-section h4 {
+  color: white;
+  margin: 0;
+  font-size: 16px;
+}
+
+.channel-section span {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.subscribe-btn {
+  margin-left: 15px;
+  background: white;
+  color: black;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  background: #e5e5e5;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #272727;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.action-buttons button:hover {
+  background: #3f3f3f;
+}
+
+.video-description {
+  margin-top: 18px;
+  background: #272727;
+  padding: 18px;
+  border-radius: 14px;
+  color: white;
+  line-height: 28px;
+  font-size: 15px;
+}
+
+.video-meta {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* BUTTOn NEW  */
+.action-btn {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  background: #272727;
+  color: #fff;
+
+  border: none;
+  border-radius: 20px;
+
+  padding: 9px 14px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.action-btn:hover {
+  background: #3f3f3f;
+}
+
+.thumb-icon {
+  font-size: 18px;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+/* LIKE ACTIVE */
+
+.action-btn.liked {
+  background: #303030;
+}
+
+.action-btn.liked .thumb-icon {
+  transform: scale(1.18);
+
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+/* DISLIKE ACTIVE */
+
+.action-btn.disliked {
+  background: #303030;
+}
+
+.action-btn.disliked .thumb-icon {
+  transform: scale(1.18);
+
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+/* CLICK RIPPLE / LIGHT */
+
+.action-btn.liked::after,
+.action-btn.disliked::after {
+  content: "";
+
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  left: 50%;
+  top: 50%;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  transform: translate(-50%, -50%) scale(1);
+
+  animation: thumbLight 0.45s ease-out;
+}
+
+@keyframes thumbLight {
+  from {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(18);
+  }
+}
+
+/* subscribe*/
+.subscribe-btn {
+  background: #fff;
+  color: #0f0f0f;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.subscribe-btn:hover {
+  background: #d9d9d9;
+}
+
+.subscribe-btn.subscribed {
+  background: #272727;
+  color: #fff;
+}
+
+.subscribe-btn.subscribed:hover {
+  background: #3f3f3f;
+}
+
+/* NEW */
+.comments-section {
+  margin-top: 32px;
+  color: white;
+}
+
+.comments-section h3 {
+  font-size: 20px;
+  margin-bottom: 26px;
+}
+
+.comment-input {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.comment-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+  outline: none;
+  color: white;
+  padding: 10px 4px;
+  font-size: 14px;
+}
+
+.comment-input input:focus {
+  border-bottom: 1px solid white;
+}
+
+.comment-input button {
+  background: #3f3f3f;
+  border: none;
+  color: white;
+  padding: 9px 16px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-header strong {
+  font-size: 13px;
+  color: white;
+}
+
+.comment-header span {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.comment-content p {
+  margin: 0;
+  color: #eee;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.comment-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 9px;
+}
+
+.comment-actions button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  padding: 6px 9px;
+  border-radius: 18px;
+  font-size: 13px;
+}
+
+.comment-actions button:hover {
+  background: #272727;
+  color: white;
+}
+
+.comment-actions span {
+  color: #aaa;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+/* STEP 7 — Comment Like/Dislike styling */
+
+.comment-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  background: transparent;
+  border: none;
+
+  color: #aaa;
+
+  cursor: pointer;
+
+  padding: 7px 9px;
+
+  border-radius: 50%;
+
+  font-size: 14px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.comment-actions button:hover {
+  background: #272727;
+  color: white;
+}
+
+.comment-actions button:active {
+  transform: scale(0.9);
+}
+
+.comment-actions .comment-liked {
+  color: white;
+}
+
+.comment-actions .comment-disliked {
+  color: white;
+}
+
+.comment-actions .comment-liked svg,
+.comment-actions .comment-disliked svg {
+  transform: scale(1.1);
+}
+
+/* STEP 7 — Reply styling */
+
+.reply-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.reply-input input {
+  flex: 1;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #555;
+
+  outline: none;
+
+  color: white;
+
+  padding: 8px 4px;
+
+  font-size: 13px;
+}
+
+.reply-input input:focus {
+  border-bottom-color: white;
+}
+
+.reply-input button {
+  background: #272727;
+  border: none;
+
+  color: white;
+
+  padding: 7px 12px;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+}
+
+.reply-input button:hover {
+  background: #3f3f3f;
+}
+
+.reply-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.reply-avatar {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.reply-item strong {
+  font-size: 12px;
+  color: white;
+}
+
+.reply-item p {
+  margin: 4px 0 0;
+
+  color: #ddd;
+
+  font-size: 13px;
+  line-height: 19px;
+}
+/* =========================================
+   RECOMMENDED VIDEOS - WATCH PAGE
+========================================= */
+
+.watch-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 4px;
+}
+
+/* One recommended video */
+
+.recommended-card {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  box-sizing: border-box;
+}
+
+.recommended-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Thumbnail */
+
+.recommended-thumbnail {
+  position: relative;
+  flex: 0 0 168px;
+  width: 168px;
+  height: 94px;
+  border-radius: 7px;
+  overflow: hidden;
+  background: #222;
+}
+
+.recommended-thumbnail img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Duration */
+
+.recommended-duration {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* Text area */
+
+.recommended-info {
+  min-width: 0;
+  flex: 1;
+  padding-top: 2px;
+}
+
+.recommended-info h3 {
+  margin: 0 0 6px;
+
+  color: #f1f1f1;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  overflow: hidden;
+}
+
+.recommended-channel {
+  margin: 0 0 4px;
+
+  color: #aaa;
+
+  font-size: 12px;
+  line-height: 1.3;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recommended-meta {
+  margin: 0;
+
+  color: #aaa;
+
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+/* Login Popup */
+
+.login-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.login-popup {
+  position: relative;
+  width: 400px;
+  max-width: calc(100% - 40px);
+  background: white;
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.login-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+}
+
+.login-popup-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.login-popup h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #111;
+}
+
+.login-popup p {
+  margin: 0 auto 24px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.login-popup-btn {
+  width: 100%;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 20px;
+  background: #ff0000;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-popup-btn:hover {
+  background: #cc0000;
+}
+
+.watch-status {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  padding: 30px;
+  background: #0f0f0f;
+  color: #fff;
+  text-align: center;
+}
+.watch-status button {
+  border: 0;
+  border-radius: 22px;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+.watch-inline-message {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #242424;
+  color: #ddd;
+}
+
+@media (max-width: 1000px) {
+  .watch-page {
+    flex-direction: column;
+    padding: 18px;
+  }
+  .watch-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .watch-page { padding: 10px; }
+  .watch-left > h2 { font-size: 18px; }
+  .watch-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .channel-section { width: 100%; }
+  .action-buttons {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+  .action-buttons button { flex: 0 0 auto; }
+  .watch-right { grid-template-columns: 1fr; }
+  .recommended-thumbnail {
+    flex-basis: 145px;
+    width: 145px;
+    height: 82px;
+  }
+  .comment-input { flex-wrap: wrap; }
+  .comment-input input { min-width: 0; flex: 1 1 180px; }
+}
+@media (max-width: 480px) {
+  .video-player { border-radius: 8px; }
+  .channel-section { gap: 8px; }
+  .watch-channel { width: 36px; height: 36px; }
+  .subscribe-btn { padding: 8px 13px; }
+  .action-buttons button { padding: 8px 12px; }
+}

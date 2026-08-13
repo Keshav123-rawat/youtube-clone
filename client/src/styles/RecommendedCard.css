@@ -1,0 +1,94 @@
+/* STEP 6.1 — Recommended video styling */
+
+.recommended-card {
+  display: flex;
+
+  gap: 10px;
+
+  width: 100%;
+
+  margin-bottom: 14px;
+
+  cursor: pointer;
+
+  color: white;
+}
+
+.recommended-thumbnail {
+  position: relative;
+
+  width: 168px;
+  min-width: 168px;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+}
+
+.recommended-thumbnail img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.recommended-duration {
+  position: absolute;
+
+  right: 5px;
+  bottom: 5px;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  color: white;
+
+  padding: 3px 5px;
+
+  border-radius: 3px;
+
+  font-size: 11px;
+}
+
+.recommended-info {
+  min-width: 0;
+
+  padding-right: 4px;
+}
+
+.recommended-info h4 {
+  margin: 0 0 6px;
+
+  font-size: 14px;
+
+  line-height: 19px;
+
+  font-weight: 600;
+
+  color: white;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.recommended-info p {
+  margin: 0 0 4px;
+
+  color: #aaa;
+
+  font-size: 12px;
+}
+
+.recommended-info span {
+  color: #888;
+
+  font-size: 12px;
+}

@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+}
+
+.home-container {
+  display: flex;
+}
+.main-content {
+  width: calc(100% - 90px);
+  margin-left: 90px;
+  padding-top: 56px;
+  background: #0f0f0f;
+  min-height: 100vh;
+  transition: 0.3s;
+  /* overflow: hidden; */
+  height: 100%;
+}
+.main-content.expanded {
+  width: calc(100% - 240px);
+  margin-left: 240px;
+}
+
+/* ============================= */
+/* MOBILE HOME LAYOUT FIX */
+/* ============================= */
+
+@media (max-width: 700px) {
+  .main-content,
+  .main-content.expanded {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    box-sizing: border-box;
+  }
+
+  /* Category buttons center */
+  .main-content .category-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 10px 12px;
+    box-sizing: border-box;
+  }
+
+  /* Videos center */
+  .main-content .video-grid {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto !important;
+
+    padding: 14px 16px !important;
+    box-sizing: border-box;
+  }
+}
+
+/* Small phones */
+@media (max-width: 500px) {
+  .main-content,
+  .main-content.expanded {
+    margin-left: 0 !important;
+  }
+
+  .main-content .category-bar {
+    justify-content: center;
+    padding: 8px 10px;
+  }
+
+  .main-content .video-grid {
+    padding: 12px !important;
+  }
+}

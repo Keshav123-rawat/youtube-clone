@@ -1,0 +1,77 @@
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+
+.video-card {
+  width: 100%;
+}
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 900px) {
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    padding: 18px;
+  }
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 14px;
+  }
+}
+
+/* ============================= */
+/* SMALL MOBILE */
+/* ============================= */
+
+@media (max-width: 380px) {
+  .video-grid {
+    gap: 16px;
+
+    padding: 10px;
+  }
+}
+
+.video-grid-status {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px 20px;
+  color: #aaa;
+  text-align: center;
+}
+.video-grid-status h3 { color: #fff; margin: 0; }
+.video-grid-status p { margin: 0; }
+.video-grid-status button {
+  margin-top: 10px;
+  border: 0;
+  border-radius: 20px;
+  padding: 10px 18px;
+  cursor: pointer;
+}
