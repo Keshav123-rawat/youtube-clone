@@ -317,7 +317,10 @@ function Navbar({ open, setOpen, search, setSearch }) {
                 </button>
 
                 {/* KEYBOARD */}
-                <button className="account-item">
+                <button
+                  className="account-item"
+                  aria-label="Keyboard shortcuts"
+                >
                   <MdKeyboard />
 
                   <span>Keyboard shortcuts</span>
