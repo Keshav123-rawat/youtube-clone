@@ -145,6 +145,7 @@ function Navbar({ open, setOpen, search, setSearch }) {
       <div className="nav-right">
         <button
           className="create-btn"
+          aria-label={user ? "Create a channel" : "Sign in to create a channel"}
           onClick={() =>
             user ? navigate("/create-channel") : navigate("/signin")
           }
