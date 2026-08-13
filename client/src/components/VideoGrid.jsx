@@ -71,6 +71,14 @@ function VideoGrid({ search = "", selectedCategory = "All" }) {
     );
   }
 
+  if (!dbVideos.length) {
+    return (
+      <div className="video-grid-status" role="status">
+        No videos found.
+      </div>
+    );
+  }
+
   if (filteredVideos.length === 0) {
     return (
       <div className="video-grid-status">
