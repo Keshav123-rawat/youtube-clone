@@ -22,7 +22,18 @@ function VideoCard({ video, onClick }) {
   const channelLogo = video.channelLogo || video.channelAvatar || null;
 
   return (
-    <div className="video-card" onClick={handleClick}>
+    <div
+      className="video-card"
+      onClick={handleClick}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+      role="button"
+      tabIndex={0}
+    >
       <div className="thumbnail-wrapper">
         {thumbnail ? (
           <img
