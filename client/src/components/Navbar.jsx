@@ -209,7 +209,7 @@ function Navbar({ open, setOpen, search, setSearch }) {
                 <div className="account-divider" />
 
                 {/* GOOGLE ACCOUNT */}
-                <button className="account-item">
+                <button className="account-item" aria-label="Google Account">
                   <span className="google-icon">G</span>
 
                   <span>Google Account</span>
