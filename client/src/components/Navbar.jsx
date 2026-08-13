@@ -225,7 +225,11 @@ function Navbar({ open, setOpen, search, setSearch }) {
                 </button>
 
                 {/* SIGN OUT */}
-                <button className="account-item" onClick={handleLogout}>
+                <button
+                  className="account-item"
+                  aria-label="Sign out of your account"
+                  onClick={handleLogout}
+                >
                   <MdLogout />
 
                   <span>Sign out</span>
