@@ -252,7 +252,7 @@ function Navbar({ open, setOpen, search, setSearch }) {
                 <div className="account-divider" />
 
                 {/* YOUTUBE STUDIO */}
-                <button className="account-item">
+                <button className="account-item" aria-label="YouTube Studio">
                   <MdOutlineAccountCircle />
 
                   <span>YouTube Studio</span>
