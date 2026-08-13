@@ -55,7 +55,11 @@ function VideoGrid({ search = "", selectedCategory = "All" }) {
   }, [dbVideos, search, selectedCategory]);
 
   if (loading) {
-    return <div className="video-grid-status">Loading videos...</div>;
+    return (
+      <div className="video-grid-status" role="status" aria-live="polite">
+        Loading videos...
+      </div>
+    );
   }
 
   if (error) {
