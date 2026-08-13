@@ -322,7 +322,11 @@ function Navbar({ open, setOpen, search, setSearch }) {
             )}
           </div>
         ) : (
-          <button className="signin-btn" onClick={() => navigate("/signin")}>
+          <button
+            className="signin-btn"
+            aria-label="Sign in to your account"
+            onClick={() => navigate("/signin")}
+          >
             Sign In
           </button>
         )}
