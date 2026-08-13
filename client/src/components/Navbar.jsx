@@ -195,6 +195,7 @@ function Navbar({ open, setOpen, search, setSearch }) {
                 {/* CREATE CHANNEL */}
                 <button
                   className="account-item channel-create"
+                  aria-label="Create a channel"
                   onClick={() => {
                     setShowAccountMenu(false);
                     navigate("/create-channel");
