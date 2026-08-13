@@ -20,7 +20,7 @@ Full-stack YouTube clone built with React, React Router, Axios, Node/Express, JW
 
 ## Run
 
-Backend:
+Backend:-
 
 ```bash
 cd server
@@ -29,7 +29,7 @@ npm install
 npm start
 ```
 
-Frontend:
+Frontend:-
 
 ```bash
 cd client
