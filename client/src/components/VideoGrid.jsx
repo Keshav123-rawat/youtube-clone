@@ -74,7 +74,7 @@ function VideoGrid({ search = "", selectedCategory = "All" }) {
   if (!dbVideos.length) {
     return (
       <div className="video-grid-status" role="status">
-        No videos found.
+        {search ? `No videos found for "${search}".` : "No videos found."}
       </div>
     );
   }
