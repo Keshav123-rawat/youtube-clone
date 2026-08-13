@@ -59,11 +59,11 @@ async function seedVideos() {
 
     await Video.insertMany(videos);
 
-    console.log("✅ Videos added to MongoDB successfully");
+    console.log("Videos added to MongoDB successfully");
 
     process.exit(0);
   } catch (error) {
-    console.error("❌ Error seeding videos:", error.message);
+    console.error("Error seeding videos:", error.message);
 
     process.exit(1);
   }

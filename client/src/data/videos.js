@@ -41,8 +41,6 @@ const videos = [
     duration: "10:20",
     channelLogo: "https://i.pravatar.cc/80?img=12",
   },
-
-  // STEP — Music video data
 ];
 
 export default videos;
