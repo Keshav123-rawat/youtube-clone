@@ -12,7 +12,9 @@ function VideoGrid({ search = "", selectedCategory = "All" }) {
     try {
       setLoading(true);
       setError("");
-      const response = await axios.get("http://localhost:5000/api/videos", {
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+      const response = await axios.get(`${API_URL}/api/videos`, {
         timeout: 10000,
       });
       setDbVideos(Array.isArray(response.data) ? response.data : []);
@@ -36,8 +38,7 @@ function VideoGrid({ search = "", selectedCategory = "All" }) {
 
     return dbVideos.filter((video) => {
       const title = video.title || "";
-      const channelName =
-        video.channelId?.name || video.channelName || "";
+      const channelName = video.channelId?.name || video.channelName || "";
 
       const matchesSearch =
         !searchText ||
@@ -90,8 +91,7 @@ function VideoGrid({ search = "", selectedCategory = "All" }) {
             ...video,
             videoId: video._id,
             uploader: video.channelId?.name || video.channelName || "YouTube",
-            channelLogo:
-              video.channelId?.avatar || video.channelLogo || "",
+            channelLogo: video.channelId?.avatar || video.channelLogo || "",
             uploadDate: video.createdAt,
           }}
         />
