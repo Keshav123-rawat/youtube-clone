@@ -21,11 +21,12 @@ const categories = [
   "Comedy",
   "Songs",
 ];
+const uniqueCategories = [...new Set(categories)];
 
 function CategoryBar({ selectedCategory, setSelectedCategory }) {
   return (
     <div className="category-bar" aria-label="Video categories">
-      {categories.map((item) => (
+      {uniqueCategories.map((item) => (
         <button
           key={item}
           type="button"
